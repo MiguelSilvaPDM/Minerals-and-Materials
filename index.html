@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Minerals and Materials</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: url("https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/a739b1f2-b90f-42d4-964f-23a217bb648f.png") center/cover no-repeat;
+    padding: 100px 30px;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+/* Overlay elegante */
+header .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.45)
+    );
+}
+
+/* TÍTULO */
+header h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 900;
+    background: linear-gradient(45deg, #d4af37, #ffd700, #b8962e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO CORRIGIDO */
+header p {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+    letter-spacing: 0.5px;
+}
+
+/* NAV */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* SEÇÕES */
+section {
+    padding: 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #d4af37;
+}
+
+/* GRID */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* CARDS */
+.card {
+    background-color: #262626;
+    padding: 15px;
+    width: 280px;
+    border-radius: 8px;
+    border-left: 5px solid #d4af37;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.price {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="overlay"></div>
+    <h1>Minerals and Materials</h1>
+    <p>Transformamos sucata em valor</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#compramos">Contratos</a>
+    <a href="#vendemos">Produtos</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="sobre">
+    <h2>🏭 Sobre Nós</h2>
+    <p>
+        A Minerals and Materials é uma empresa dedicada ao reaproveitamento de recursos provenientes da recolha de resíduos, da exploração mineira, da restauração florestal e de recursos cinegéticos.
+</p>
+<p>
+Estabelecemos uma ligação direta com as empresas responsáveis, disponibilizando contratos para fornecedores.
+    </p>
+</section>
+
+<section id="compramos">
+    <h2>📄 Contratos Ativos</h2>
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/Cabo-de-Cobre-Nu-Normatizado-1.webp" alt="Cobre">
+            <h3>Cobre</h3>
+            <p>Quantidade: 500 unidades</p>
+            <p class="price">Pagamento: 150€/un</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Alumínio">
+            <h3>Alumínio</h3>
+            <p>Quantidade: 300 unidades</p>
+            <p class="price">Pagamento: 90€/un</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="vendemos">
+    <h2>🛒 Produtos Disponíveis</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Metal Refinado">
+            <h3>Metal Refinado</h3>
+            <p class="price">Preço: 250€/un</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Peças Mecânicas">
+            <h3>Peças Mecânicas</h3>
+            <p class="price">Preço: 400€/un</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Componentes Eletrónicos">
+            <h3>Componentes Eletrónicos</h3>
+            <p class="price">Preço: 600€/un</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>📞 Contacto</h2>
+    <p>Telefone: Carlo - 946 580 173</p>
+    <p>Localização: Zona industrial</p>
+</section>
+
+<footer>
+    <p>© 2026 Minerals and Materials - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

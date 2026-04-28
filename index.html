@@ -2,7 +2,8 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<title>Minerals and Materials</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minerals & Materials</title>
 
 <style>
 body {
@@ -18,20 +19,15 @@ header {
     padding: 100px 30px;
     text-align: center;
     position: relative;
-    color: white;
 }
 
-/* Overlay elegante */
 header .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0.45)
-    );
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
 }
 
-/* TÍTULO */
+/* 🔥 TÍTULO ANTIGO RESTAURADO */
 header h1 {
     position: relative;
     font-size: 56px;
@@ -42,14 +38,9 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* SUBTÍTULO CORRIGIDO */
 header p {
     position: relative;
     font-size: 20px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.95);
-    text-shadow: 0 3px 12px rgba(0,0,0,0.9);
-    letter-spacing: 0.5px;
 }
 
 /* NAV */
@@ -63,14 +54,13 @@ nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 nav a:hover {
     color: #d4af37;
 }
 
-/* SEÇÕES */
+/* SECTIONS */
 section {
     padding: 50px;
     max-width: 1000px;
@@ -96,6 +86,7 @@ h2 {
     border-radius: 8px;
     border-left: 5px solid #d4af37;
     transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .card:hover {
@@ -112,11 +103,58 @@ h2 {
     font-weight: bold;
 }
 
-/* FOOTER */
-footer {
-    background-color: #111;
+/* BUTTON */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffd700;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
     text-align: center;
-    padding: 20px;
+    border: 1px solid #d4af37;
+    width: 320px;
+}
+
+.fechar {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
 }
 </style>
 </head>
@@ -125,8 +163,8 @@ footer {
 
 <header>
     <div class="overlay"></div>
-    <h1>Minerals and Materials</h1>
-    <p>Transformamos sucata em valor</p>
+    <h1>MINERALS & MATERIALS</h1>
+    <p>Mercado industrial de Los Santos</p>
 </header>
 
 <nav>
@@ -139,29 +177,42 @@ footer {
 <section id="sobre">
     <h2>🏭 Sobre Nós</h2>
     <p>
-        A Minerals and Materials é uma empresa dedicada ao reaproveitamento de recursos provenientes da recolha de resíduos, da exploração mineira, da restauração florestal e de recursos cinegéticos.
-</p>
-<p>
-Estabelecemos uma ligação direta com as empresas responsáveis, disponibilizando contratos para fornecedores.
+        A Minerals & Materials é uma empresa dedicada ao reaproveitamento de recursos provenientes da recolha de resíduos, da exploração mineira, da restauração florestal e de recursos cinegéticos.
+    </p>
+    <p>
+        Estabelecemos uma ligação direta com as empresas responsáveis, disponibilizando contratos para fornecedores.
     </p>
 </section>
 
 <section id="compramos">
     <h2>📄 Contratos Ativos</h2>
+
     <div class="grid">
 
         <div class="card">
-            <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/Cabo-de-Cobre-Nu-Normatizado-1.webp" alt="Cobre">
+            <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/Cabo-de-Cobre-Nu-Normatizado-1.webp">
             <h3>Cobre</h3>
-            <p>Quantidade: 500 unidades</p>
-            <p class="price">Pagamento: 150€/un</p>
+            <p><strong>Empresa:</strong> LS Industrial Group</p>
+            <p><strong>Quantidade:</strong> 500kg</p>
+            <p><strong>Entrega:</strong> Porto de Los Santos</p>
+            <p class="price">Pagamento: 150€/kg</p>
+
+            <button onclick="abrirModal()">
+                Aceitar contrato
+            </button>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Alumínio">
+            <img src="https://via.placeholder.com/300x200">
             <h3>Alumínio</h3>
-            <p>Quantidade: 300 unidades</p>
-            <p class="price">Pagamento: 90€/un</p>
+            <p><strong>Empresa:</strong> Blaine County Metals</p>
+            <p><strong>Quantidade:</strong> 300kg</p>
+            <p><strong>Entrega:</strong> Sandy Shores</p>
+            <p class="price">Pagamento: 90€/kg</p>
+
+            <button onclick="abrirModal()">
+                Aceitar contrato
+            </button>
         </div>
 
     </div>
@@ -173,21 +224,33 @@ Estabelecemos uma ligação direta com as empresas responsáveis, disponibilizan
     <div class="grid">
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Metal Refinado">
+            <img src="https://via.placeholder.com/300x200">
             <h3>Metal Refinado</h3>
             <p class="price">Preço: 250€/un</p>
+
+            <button onclick="abrirModal()">
+                Comprar
+            </button>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Peças Mecânicas">
+            <img src="https://via.placeholder.com/300x200">
             <h3>Peças Mecânicas</h3>
             <p class="price">Preço: 400€/un</p>
+
+            <button onclick="abrirModal()">
+                Comprar
+            </button>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Componentes Eletrónicos">
+            <img src="https://via.placeholder.com/300x200">
             <h3>Componentes Eletrónicos</h3>
             <p class="price">Preço: 600€/un</p>
+
+            <button onclick="abrirModal()">
+                Comprar
+            </button>
         </div>
 
     </div>
@@ -195,13 +258,36 @@ Estabelecemos uma ligação direta com as empresas responsáveis, disponibilizan
 
 <section id="contacto">
     <h2>📞 Contacto</h2>
-    <p>Telefone: Carlo - 946 580 173</p>
-    <p>Localização: Zona industrial</p>
+    <p>Carlo Donatti: 946 580 173</p>
+    <p>Domenico Donatti: 942 212 828</p>
+    <p>Leonardo Donatti: 935 669 591</p>
 </section>
 
 <footer>
-    <p>© 2026 Minerals and Materials - Todos os direitos reservados</p>
+    <p>© 2026 Minerals & Materials</p>
 </footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <h2>📞 Contactos da Empresa</h2>
+
+        <p><strong>👔 Vendedor:</strong> Carlo Donatti - 946 580 173</p>
+        <p><strong>💼 Vendedor:</strong> Domenico Donatti - 942 212 828</p>
+        <p><strong>🚛 Vendedor:</strong> Leonardo Donatti - 935 669 591</p>
+    </div>
+</div>
+
+<script>
+function abrirModal() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>

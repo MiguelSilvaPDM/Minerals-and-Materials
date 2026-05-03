@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,51 +10,60 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #2b2b2b;
+    background: linear-gradient(180deg, #2a2f36, #1b1f25);
     color: white;
 }
 
 /* HEADER */
 header {
-    background: url("https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/a739b1f2-b90f-42d4-964f-23a217bb648f.png") center/cover no-repeat;
-    padding: 100px 30px;
-    text-align: center;
     position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    background: url("https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/722dac0c-a031-4aae-bb11-bb67fe17f591.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    filter: contrast(1.05) saturate(1.1);
 }
 
-header .overlay {
+header::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.35)
+    );
 }
 
-/* 🔥 TÍTULO ANTIGO RESTAURADO */
 header h1 {
     position: relative;
-    font-size: 56px;
-    font-weight: 900;
-    background: linear-gradient(45deg, #d4af37, #ffd700, #b8962e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-}
-
-header p {
-    position: relative;
-    font-size: 20px;
+    z-index: 2;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #d4af37;
+    text-shadow: 0 5px 25px rgba(0,0,0,0.6);
 }
 
 /* NAV */
 nav {
-    background-color: #333;
-    padding: 10px;
+    background: rgba(42, 47, 54, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 12px;
     text-align: center;
+    border-bottom: 1px solid #3a3f47;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -62,13 +72,18 @@ nav a:hover {
 
 /* SECTIONS */
 section {
-    padding: 50px;
+    padding: 50px 20px;
     max-width: 1000px;
-    margin: auto;
+    margin: 30px auto;
+    background: rgba(49, 56, 68, 0.85);
+    border: 1px solid #3f4652;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 h2 {
     color: #d4af37;
+    margin-bottom: 20px;
 }
 
 /* GRID */
@@ -76,26 +91,28 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 /* CARDS */
 .card {
-    background-color: #262626;
+    background-color: #3a4250;
+    border: 1px solid #4a5568;
     padding: 15px;
     width: 280px;
-    border-radius: 8px;
-    border-left: 5px solid #d4af37;
+    border-radius: 12px;
     transition: 0.3s;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-6px);
+    border-color: #d4af37;
 }
 
 .card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .price {
@@ -107,12 +124,13 @@ h2 {
 button {
     margin-top: 10px;
     padding: 10px;
+    width: 100%;
     border: none;
     background: #d4af37;
     color: black;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
@@ -120,51 +138,75 @@ button:hover {
     background: #ffd700;
 }
 
-/* MODAL */
+/* 🔥 MODAL (CORRIGIDO + INTEGRADO AO TEMA) */
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(15, 18, 24, 0.75);
+    backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 .modal-content {
-    background: #1e1e1e;
+    background: rgba(49, 56, 68, 0.95);
+    border: 1px solid #3f4652;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 14px;
     text-align: center;
-    border: 1px solid #d4af37;
     width: 320px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    color: white;
+}
+
+.modal-content h2 {
+    color: #d4af37;
 }
 
 .fechar {
     float: right;
     cursor: pointer;
     font-size: 22px;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background-color: #14181f;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    color: #aaa;
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-    .grid {
-        flex-direction: column;
-        align-items: center;
+    header {
+        aspect-ratio: 16 / 8;
     }
 
     header h1 {
-        font-size: 32px;
+        font-size: 28px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    section {
+        margin: 20px 10px;
     }
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <div class="overlay"></div>
-    <h1>MINERALS & MATERIALS</h1>
-    </header>
+ 
+</header>
 
 <nav>
     <a href="#sobre">Sobre</a>
@@ -176,10 +218,7 @@ button:hover {
 <section id="sobre">
     <h2>🏭 Sobre Nós</h2>
     <p>
-        A Minerals & Materials é uma empresa dedicada ao reaproveitamento de recursos provenientes da recolha de resíduos, da exploração mineira, da restauração florestal e de recursos cinegéticos.
-    </p>
-    <p>
-        Estabelecemos uma ligação direta com as empresas responsáveis, disponibilizando contratos para fornecedores.
+        A Minerals & Materials é uma empresa sediada em Puerto Esperanza que atua como intermediária entre fornecedores e empresas responsáveis pelo processamento de recursos provenientes da recolha de resíduos, exploração mineira, restauração florestal e exploração de recursos naturais. Através da nossa plataforma, disponibilizamos contratos abertos que podem ser aceites por qualquer utilizador.
     </p>
 </section>
 
@@ -190,87 +229,59 @@ button:hover {
 
         <div class="card">
             <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/1707b082-db68-466e-b9b0-940c14046d36.png">
-            <h3>Plastico</h3>
-            <p><strong>Empresa:</strong>Rogers Salvage and Scrap</p>
-            <p><strong>Entrega:</strong> Sede Rogers </p>
-<p><strong>Quantidade:</strong> 180 Unidades</p>
-            <p class="price">Pagamento: 720$</p>
-
-            <button onclick="abrirModal()">
-                Aceitar contrato
-            </button>
+            <h3>Plástico</h3>
+            <p><strong>Empresa:</strong> Rogers Salvage and Scrap</p>
+            <p><strong>Entrega:</strong> Sede Rogers</p>
+            <p><strong>Quantidade:</strong> 180 Unidades</p>
+            <p class="price">Pagamento: 540$</p>
+            <button onclick="abrirModal()">Aceitar contrato</button>
         </div>
 
         <div class="card">
             <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/Borracha.webp">
             <h3>Borracha</h3>
-            <p><strong>Empresa:</strong>Rogers Salvage and Scrap</p>
+            <p><strong>Empresa:</strong> Rogers Salvage and Scrap</p>
             <p><strong>Entrega:</strong> Sede Rogers</p>
-<p><strong>Quantidade:</strong> 360 Unidades</p>
-            <p class="price">Pagamento: 1 440$ </p>
-
-            <button onclick="abrirModal()">
-                Aceitar contrato
-            </button>
+            <p><strong>Quantidade:</strong> 360 Unidades</p>
+            <p class="price">Pagamento: 1 080$</p>
+            <button onclick="abrirModal()">Aceitar contrato</button>
         </div>
 
- <div class="card">
+        <div class="card">
             <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/Madeira.webp">
-            <h3>Tabua Madeira</h3>
-            <p><strong>Empresa:</strong>Rogers Salvage and Scrap</p>
+            <h3>Tábuas de Madeira</h3>
+            <p><strong>Empresa:</strong> Rogers Salvage and Scrap</p>
             <p><strong>Entrega:</strong> Sede Rogers</p>
             <p><strong>Quantidade:</strong> 270 Unidades</p>
-            <p class="price">Pagamento: 1 080$ </p>
-
-            <button onclick="abrirModal()">
-                Aceitar contrato
-            </button>
+            <p class="price">Pagamento: 1 350$</p>
+            <button onclick="abrirModal()">Aceitar contrato</button>
         </div>
-
 
     </div>
 </section>
 
 <section id="vendemos">
     <h2>🛒 Produtos Disponíveis</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <img src="https://r2.fivemanage.com/txHLjrfxGuO5aGfPkI0fH/content.webp">
-            <h3>Skateboard</h3>
-            <p class="price">Preço: 100€/un</p>
-
-            <button onclick="abrirModal()">
-                Comprar
-            </button>
-        </div>
-
-      
-
-    </div>
+    <p>Sem produtos disponíveis de momento.</p>
 </section>
 
 <section id="contacto">
     <h2>📞 Contacto</h2>
-    <p>Carlo Donatti: 946 580 173</p>
-    <p>Domenico Donatti: 942 212 828</p>
-    <p>Leonardo Donatti: 935 669 591</p>
+    <p>📱 Telefone: 946 580 173</p>
+    <p>✉️ Email: mineralsandmaterials@altf4.pe</p>
+    <p>🏢 Morada: Calais Avenue</p>
 </section>
 
 <footer>
-    <p>© 2026 Minerals & Materials</p>
+    <p>© 2026 Minerals & Materials - Todos os direitos reservados</p>
 </footer>
 
 <!-- MODAL -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <span class="fechar" onclick="fecharModal()">&times;</span>
-        <h2>📞 Contactos da Empresa</h2>
-
-        <p><strong>👔 Vendedor:</strong> Carlo Donatti - 946 580 173</p>
-        <p><strong>👔 Vendedor:</strong> Domenico Donatti - 942 212 828</p>
-        <p><strong>👔 Vendedor:</strong> Leonardo Donatti - 935 669 591</p>
+        <h2>📞 Contacto</h2>
+        <p>📱 Minerals & Materials - 946 580 173</p>
     </div>
 </div>
 
